@@ -1,1 +1,529 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0712">
+  <meta name="description" content="Free gaming profile pictures and banners. Request your own custom design from Chris's PFPs for Free.">
+  <title>Chris's PFPs for Free | Gaming Graphics</title>
+
+  <style>
+    :root {
+      --bg: #090711;
+      --panel: #141020;
+      --purple: #9b5cff;
+      --pink: #d946ef;
+      --text: #f7f2ff;
+      --muted: #b9aecb;
+      --border: #332344;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(9, 7, 17, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.1rem;
+      letter-spacing: -.5px;
+    }
+
+    .logo span { color: var(--purple); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .hero {
+      text-align: center;
+      padding: 95px 0 85px;
+      background:
+        radial-gradient(ellipse at 50% 0%, #54218b66, transparent 65%),
+        var(--bg);
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 13px;
+      border: 1px solid #7541ad;
+      border-radius: 30px;
+      color: #d8baff;
+      background: #30154a66;
+      font-size: .82rem;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin: 22px 0;
+      letter-spacing: -2px;
+    }
+
+    .glow {
+      color: var(--purple);
+      text-shadow: 0 0 28px #8b5cf666;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .button {
+      display: inline-block;
+      border: 0;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-weight: 800;
+      cursor: pointer;
+      background: linear-gradient(110deg, #873cff, #c13ce7);
+      color: white;
+      box-shadow: 0 0 22px #8b5cf633;
+      font-size: .95rem;
+    }
+
+    .button:hover { filter: brightness(1.15); }
+
+    .button.secondary {
+      background: #1b1428;
+      border: 1px solid #61417e;
+      box-shadow: none;
+    }
+
+    section { padding: 65px 0; }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin: 0 0 8px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple);
+    }
+
+    .art {
+      aspect-ratio: 1 / 1;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 15px;
+      background:
+        radial-gradient(circle at 50% 35%, #8d3cff99, transparent 55%),
+        linear-gradient(135deg, #171026, #32114a);
+      font-size: 3rem;
+    }
+
+    .art.banner {
+      aspect-ratio: 16 / 9;
+      background:
+        radial-gradient(ellipse at 50% 50%, #b52bff88, transparent 65%),
+        linear-gradient(120deg, #160d28, #40105b, #0c0a18);
+      font-size: 1.6rem;
+      font-weight: 900;
+    }
+
+    .art.blue {
+      background:
+        radial-gradient(circle at 50% 40%, #347dff99, transparent 60%),
+        linear-gradient(135deg, #10172d, #241449);
+    }
+
+    .art.pink {
+      background:
+        radial-gradient(circle at 50% 40%, #f044d899, transparent 60%),
+        linear-gradient(135deg, #271027, #4b164c);
+    }
+
+    .card-content { padding: 18px; }
+
+    .card-content h3 { margin: 0 0 5px; }
+
+    .card-content p {
+      margin: 0 0 15px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .small-label {
+      display: inline-block;
+      color: #d8baff;
+      font-size: .75rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .about-box, .request-box {
+      max-width: 760px;
+      margin: auto;
+      padding: clamp(22px, 5vw, 40px);
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .about-box p { color: var(--muted); }
+
+    .request-box label {
+      display: block;
+      margin: 17px 0 7px;
+      font-weight: 700;
+    }
+
+    .request-box input,
+    .request-box select,
+    .request-box textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #4a365f;
+      border-radius: 9px;
+      background: #0c0914;
+      color: white;
+      font: inherit;
+    }
+
+    .request-box input:focus,
+    .request-box select:focus,
+    .request-box textarea:focus {
+      outline: 2px solid var(--purple);
+      outline-offset: 2px;
+    }
+
+    .request-box textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .notice {
+      font-size: .86rem;
+      color: var(--muted);
+      margin: 15px 0;
+    }
+
+    .status {
+      color: #d8baff;
+      margin-top: 15px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 15px 0; align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 13px; }
+      .hero { padding: 70px 0; }
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+      .card-content { padding: 13px; }
+      .art { font-size: 2.3rem; }
+    }
+
+    @media (max-width: 420px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">CHRIS'S <span>PFPs</span></a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#pfps">Profile Pictures</a>
+        <a href="#banners">Banners</a>
+        <a href="#request">Request Yours</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="tag">100% FREE GAMING GRAPHICS</span>
+        <h1>YOUR GAME.<br><span class="glow">YOUR STYLE.</span></h1>
+        <p>
+          Level up your profile with gaming profile pictures and banners.
+          Want something unique? Send a request and tell me your idea.
+        </p>
+        <a class="button" href="#pfps">Explore Designs</a>
+        <a class="button secondary" href="#request">Request a Design</a>
+      </div>
+    </section>
+
+    <section id="pfps">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Profile Pictures</h2>
+          <p>Find your next gaming identity.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="art">⚡</div>
+            <div class="card-content">
+              <span class="small-label">Neon collection</span>
+              <h3>Neon Strike</h3>
+              <p>Purple energy and a futuristic feel.</p>
+              <a class="button secondary" href="#request">Request this style</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art blue">❄</div>
+            <div class="card-content">
+              <span class="small-label">Ice collection</span>
+              <h3>Frost Mode</h3>
+              <p>Cool blue tones with icy energy.</p>
+              <a class="button secondary" href="#request">Request this style</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art pink">✦</div>
+            <div class="card-content">
+              <span class="small-label">Cyber collection</span>
+              <h3>Cyber Pulse</h3>
+              <p>Bright pink cyber-inspired colours.</p>
+              <a class="button secondary" href="#request">Request this style</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="banners">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Gaming Banners</h2>
+          <p>Give your gaming profile a complete makeover.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="art banner">PURPLE ELITE</div>
+            <div class="card-content">
+              <h3>Purple Elite</h3>
+              <p>Dark backgrounds with purple neon accents.</p>
+              <a class="button secondary" href="#request">Request a banner</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art banner blue">ICE WAVE</div>
+            <div class="card-content">
+              <h3>Ice Wave</h3>
+              <p>Blue effects for a clean gaming setup.</p>
+              <a class="button secondary" href="#request">Request a banner</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="art banner pink">NIGHT MODE</div>
+            <div class="card-content">
+              <h3>Night Mode</h3>
+              <p>Dark cyber colours with bright highlights.</p>
+              <a class="button secondary" href="#request">Request a banner</a>
+            </div>
+          </article>
+        </div>
+        <p class="notice" style="text-align:center">
+          These are style previews, not downloadable finished designs yet.
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="about-box">
+          <h2>Gaming graphics. No price tag.</h2>
+          <p>
+            Welcome to Chris's PFPs for Free! The goal is to help gamers
+            get graphics that fit their style without paying for a design.
+          </p>
+          <p>
+            Choose a style from the gallery or use the request form to
+            describe your own idea. I'll review requests and respond by email.
+          </p>
+          <a class="button" href="#request">Get Your Custom Design</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="request">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Request Your Design</h2>
+          <p>Tell me what you want, and I'll receive your request by email.</p>
+        </div>
+
+        <div class="request-box">
+          <form id="requestForm">
+            <label for="customerName">Your name or gaming username</label>
+            <input id="customerName" name="customerName"
+              maxlength="60" required placeholder="Your gaming name">
+
+            <label for="customerEmail">Your email address</label>
+            <input id="customerEmail" name="customerEmail"
+              type="email" maxlength="150" required
+              placeholder="you@example.com">
+
+            <label for="designType">What do you want?</label>
+            <select id="designType" name="designType" required>
+              <option value="">Choose a design</option>
+              <option>Custom profile picture</option>
+              <option>Gaming banner</option>
+              <option>Profile picture and banner</option>
+            </select>
+
+            <label for="style">Preferred style</label>
+            <select id="style" name="style">
+              <option>Purple neon</option>
+              <option>Blue / ice</option>
+              <option>Pink cyber</option>
+              <option>Dark / black</option>
+              <option>My own idea</option>
+            </select>
+
+            <label for="details">Describe your idea</label>
+            <textarea id="details" name="details" maxlength="1500"
+              required placeholder="Colours, text, game theme and anything else you want..."></textarea>
+
+            <p class="notice">
+              Requests are free. Please don't include passwords, home
+              addresses or other private information.
+            </p>
+
+            <button class="button" type="submit">Prepare Email Request</button>
+            <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Chris's PFPs for Free</p>
+      <p>Made for gamers, by a gamer. Keep it creative.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Replace this with a dedicated public-facing email address
+    // before publishing your website.
+    const CONTACT_EMAIL = "YOUR_PUBLIC_EMAIL@example.com";
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.getElementById("requestForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      if (CONTACT_EMAIL === "YOUR_PUBLIC_EMAIL@example.com") {
+        document.getElementById("formStatus").textContent =
+          "The website owner still needs to configure the request email address.";
+        return;
+      }
+
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const subject = "Free graphics request: " + data.get("designType");
+
+      const body = [
+        "New request for Chris's PFPs for Free",
+        "",
+        "Name / username: " + data.get("customerName"),
+        "Reply email: " + data.get("customerEmail"),
+        "Design: " + data.get("designType"),
+        "Style: " + data.get("style"),
+        "",
+        "Design details:",
+        data.get("details")
+      ].join("\n");
+
+      const mailto = "mailto:" + CONTACT_EMAIL
+        + "?subject=" + encodeURIComponent(subject)
+        + "&body=" + encodeURIComponent(body);
+
+      document.getElementById("formStatus").textContent =
+        "Your email app should open with the request ready. Check it and press Send to submit.";
+
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
+
